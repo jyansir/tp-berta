@@ -8,11 +8,11 @@ This repo contains original PyTorch implementation of:
 
 The following key features are proposed in this paper:
 
-- Relative magnitude tokenization (*RMT*), a distributed representation method for continuous values to enhance LM's numerical perception capability.
+- Relative magnitude tokenization (*RMT*): a distributed representation method for continuous values to enhance LM's numerical perception capability.
 
-- Intra-feature attention (*IFA*), a mechanism to pre-fuse feature-wise information for reasonable tabular feature contexts & model acceleration.
+- Intra-feature attention (*IFA*): a mechanism to pre-fuse feature-wise information for reasonable tabular feature contexts & model acceleration.
 
-- *TP-BERTa*, a resulting LM pre-trained from RoBERTa with the above features for tabular prediction.
+- *TP-BERTa*: a resulting LM pre-trained from RoBERTa with the above features for tabular prediction.
 
 ## Project Structure
 
@@ -51,9 +51,16 @@ The repo structure and module functions are as follows:
 
 All necessary dependencies for TP-BERTa are included in `requirement.txt`. To conduct the packaged baselines, uncomment the corresponding lines.
 
+### How to pre-train a TP-BERTa from scratch
+
+In experiment we saved weights and configs of [RoBERTa-base](https://huggingface.co/FacebookAI/roberta-base/tree/main) in the local `checkpoints/roberta-base` folder (network unavailable) and conducted pre-training with `scripts/pretrain/pretrain_tpberta.py`. You can use online HuggingFace APIs by assigning the argument `--base_model_dir` with "FacebookAI/roberta-base".
+
 ## TODO
 
-- [ ] Upload pre-trained TP-BERTa checkpoints.
+- [x] Upload pre-trained TP-BERTa checkpoints.
+    1. Download TP-BERTa checkpoints pre-trained on [single task type](https://drive.google.com/uc?export=download&id=13_GAK2VcShxm5TgqSvLk2afBTIYcCbEs) or [both task types](https://drive.google.com/uc?export=download&id=1ArjkOAblGPErmxUyVIfpiM0IztnjjYxq).
+    2. Move the `*.tar.gz` file to the `checkpoints` folder (create one if not exists)
+    3. Unzip the file and run TP-BERTa according to the scripts in `scripts/examples/finetune`.
 
 - [ ] Sort and update experiment datasets.
 
@@ -77,5 +84,5 @@ If you find this useful for your research, please cite the following paper:
 
 Our codes are influenced by the following repos:
 
-- [Huggingface Transformers](https://github.com/huggingface/transformers)
+- [HuggingFace Transformers](https://github.com/huggingface/transformers)
 - [RTDL Numerical Embeddings](https://github.com/yandex-research/rtdl-num-embeddings)
