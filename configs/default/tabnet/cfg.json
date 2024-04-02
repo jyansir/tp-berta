@@ -1,0 +1,22 @@
+{
+    "model": {
+        "batch_momentum": 0.95,
+        "d_embedding": 128,
+        "feature_dim": 64,
+        "num_decision_steps": 3,
+        "relaxation_factor": 1.333,
+        "virtual_batch_size": 128
+    },
+    "training": {
+        "display_steps": 100,
+        "epochs": 50000,
+        "grad_thresh": 2000.0,
+        "patience": 16,
+        "schedule": {
+            "decay_rate": 0.5,
+            "decay_steps": 500,
+            "learning_rate": 0.005
+        },
+        "sparsity_loss_weight": 0.001
+    }
+}

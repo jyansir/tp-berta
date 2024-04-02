@@ -1,0 +1,19 @@
+{
+    "normalization": "quantile",
+    "model": {
+        "cross_dropout": 0.2,
+        "d": 256,
+        "d_embedding": 256,
+        "hidden_dropout": 0.2,
+        "n_cross_layers": 3,
+        "n_hidden_layers": 3,
+        "stacked": false
+    },
+    "training": {
+        "lr": 0.0001,
+        "n_epochs": 1000000000,
+        "optimizer": "adamw",
+        "patience": 16,
+        "weight_decay": 1e-05
+    }
+}

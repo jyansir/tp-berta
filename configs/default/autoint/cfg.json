@@ -1,0 +1,23 @@
+{
+    "normalization": "quantile",
+    "model": {
+        "activation": "relu",
+        "attention_dropout": 0.2,
+        "d_token": 64,
+        "initialization": "kaiming",
+        "n_heads": 2,
+        "n_layers": 3,
+        "prenormalization": false,
+        "residual_dropout": 0.0,
+        "kv_compression": null,
+        "kv_compression_sharing": null
+    },
+    "seed": 0,
+    "training": {
+        "lr": 0.0001,
+        "n_epochs": 1000000000,
+        "optimizer": "adamw",
+        "patience": 16,
+        "weight_decay": 1e-05
+    }
+}
