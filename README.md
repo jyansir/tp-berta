@@ -62,7 +62,10 @@ In experiment we saved weights and configs of [RoBERTa-base](https://huggingface
     2. Move the `*.tar.gz` file to the `checkpoints` folder (create one if not exists)
     3. Unzip the file and run TP-BERTa according to the scripts in `scripts/examples/finetune`.
 
-- [ ] Sort and update experiment datasets.
+- [x] Sort and update experiment datasets.
+    1. We have acquired permission on distributing the used data subset from [TabPertNet (OpenTabs currently)](https://arxiv.org/abs/2307.04308) datasets.
+    2. Download datasets for [pre-training](https://drive.google.com/uc?export=download&id=1Jy45I_vTKn6McMROi5IKjKoSi9QJtx9A) (202 datasets) and [fine-tuning](https://drive.google.com/uc?export=download&id=1JhOJR1kxjyu4w4ZHi8VcxgMh-iYJRDgG) (145 datasets).
+    3. Unzip the `*.tar.gz` file to the `data` folder (create one if not exists).
 
 - [ ] Integrate TP-BERTa to HuggingFace🤗 community.
 
