@@ -55,6 +55,10 @@ All necessary dependencies for TP-BERTa are included in `requirement.txt`. To co
 
 In experiment we saved weights and configs of [RoBERTa-base](https://huggingface.co/FacebookAI/roberta-base/tree/main) in the local `checkpoints/roberta-base` folder (network unavailable) and conducted pre-training with `scripts/pretrain/pretrain_tpberta.py`. You can use online HuggingFace APIs by assigning the argument `--base_model_dir` with "FacebookAI/roberta-base".
 
+### Considerations for fine-tuning a TP-BERTa
+
+The TP-BERTa is designed for standard supervised tabular data prediction, it requires fine-tuning on downstream datasets, and a larger training round (in experiment we uniformly used 200 max training epochs with an early stop of 50 epochs, codes [here](https://github.com/jyansir/tp-berta/blob/main/scripts/finetune/default/run_default_config_tpberta.py)) is preferred compared to the small tabular deep models (e.g., FT-Transformer) since **slightly fine-tuning the BERT-sized model is tend to be underfit** in our practice.
+
 ## TODO
 
 - [x] Upload pre-trained TP-BERTa checkpoints.
